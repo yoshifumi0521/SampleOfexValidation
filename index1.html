@@ -4,32 +4,36 @@
 	<meta charset="UTF-8">
 	<title>フォームのバリデーションを行うjQueryライブラリexValidationのサンプル</title>
 	<link type="text/css" rel="stylesheet" href="css/exvalidation.css" />
-	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/exvalidation.js"></script>
 	<script type="text/javascript" src="js/exchecker-ja.js"></script>
-	
 	
 </head>
 <body>
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	<form>
+		<label for="name">名前</label>
+		<input type="text" id="name" name="name" value="" />
+		<input type="submit" value="submit">
+	</form>
+
 	
 	<script>
 	
-	
-	
-	
-
-
-
-
+		$(function(){
+		
+			$("form").exValidation({
+				
+			rules: {
+				name: "required"
+			
+			},
+			stepValidation: true,
+			scrollToErr: false
+			
+			});
+		});
+		
 	</script>
 
 </body>
